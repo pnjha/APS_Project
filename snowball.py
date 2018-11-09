@@ -21,6 +21,14 @@ def snowball(dist,vertices):
                 dist[k][i] = min(dist[k][i], dist[j][i]+graph[k][j])
 
 
+def executesnowball(graph,vertices):
+    flag, graph = DPC(graph,vertices)
+    if  flag == False:
+        print "Input graph is not consistent"
+    else:
+        snowball(graph,vertices)    
+
+
 def printSolution():
     for i in range(0, vertices):
         for j in range(0, vertices):
