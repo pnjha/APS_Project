@@ -1,10 +1,9 @@
 
 def DPC(graph,vertices):
 
-    for k in range(vertices-2, 0, -1):
+    for k in range(vertices-2, -1, -1):
         for j in range(0,k):
             for i in range(0,j):
-                print i, j, k
                 if graph[i][k] != float('inf') and graph[k][j] != float('inf'):
                     graph[i][j] = min(graph[i][j], graph[i][k]+graph[k][j])    
                 if graph[j][k] != float('inf') and graph[k][i] != float('inf'):
@@ -28,6 +27,7 @@ def executesnowball(graph,vertices):
         print "Input graph is not consistent"
     else:
         snowball(graph,vertices)    
+
 
 def printSolution():
     for i in range(0, vertices):
