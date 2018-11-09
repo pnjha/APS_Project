@@ -10,7 +10,6 @@ import numpy as np
 import networkx as nx
 import snowball as sb
 import floydWarshall as fw
-<<<<<<< HEAD
 import matplotlib.pyplot as plt
 
 
@@ -76,7 +75,7 @@ def createMatrix(vertices):
 
 	#************* Reading from file ****************************************
 
-	filename = '/content/drive/My Drive/APS_Project/planar_'+str(vertices)+'_nodes.txt'
+	filename = 'planar_'+str(vertices)+'_nodes.txt'
 
 	x,y = np.loadtxt(filename, delimiter = "\t", unpack = True)
 
@@ -133,16 +132,16 @@ for value in vertex:
 	graph = createMatrix(value)
 
 	start = time.time()
-	floydWarshall(graph,value)
+	fw.floydWarshall(graph,value)
 	end = time.time()
 	FTIME.append(end - start)
 
 
-	flag, graph = DPC(graph,value)		
+	flag, graph = sb.DPC(graph,value)		
 
 	if flag == True:
 		start = time.time()
-		snowball(graph,value)
+		sb.snowball(graph,value)
 		end = time.time()
 		STIME.append(end - start)
 
