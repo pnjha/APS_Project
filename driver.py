@@ -14,7 +14,7 @@ import matplotlib.pyplot as plt
 
 
 
-vertex = [50,100,500]
+vertex = [10,50,100,500]
 
 def createMatrix(vertices):
 
